@@ -219,7 +219,7 @@ mvn spring-boot:run
 
 1) Online 배송 요청 (isoffline=false)
 
-![](file:///D:/Cloud%20Native%20Architecture/capstone/team4-2/img/1.order1.JPG)
+![](images/1.order1.JPG)
 
 
 
@@ -227,13 +227,13 @@ mvn spring-boot:run
 
     (orderPlaced -> PaymentCompleted -> FlowerWapped -> DeliveryStarted)
 
-<img src="file:///D:/Cloud%20Native%20Architecture/capstone/team4-2/img/1.order1_kafka.JPG" title="" alt="" data-align="inline">
+<img src="images/1.order1_kafka.JPG" title="" alt="" data-align="inline">
 
 
 
 2. 현장 수령 (isoffline=true)
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\1.order2-offline.JPG)
+![](images\1.order2-offline.JPG)
 
 ##### kafka event 확인
 
@@ -241,13 +241,13 @@ mvn spring-boot:run
 (orderPlaced -> PaymentCompleted -> FlowerSold)
 ```
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\1.order2-offline_kafka.JPG)
+![](images\1.order2-offline_kafka.JPG)
 
 
 
 ### 2. CQRS
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\img\2.cqrs.JPG)
+![](images\2.cqrs.JPG)
 
 order 최종 취소된  결과(DeliveryCanceled)의 이벤트를 Order 내 Mview에 저장
 
@@ -255,7 +255,7 @@ order 최종 취소된  결과(DeliveryCanceled)의 이벤트를 Order 내 Mview
 
 ## 3.
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\3.cancel_order.JPG)
+![](images\3.cancel_order.JPG)
 
 order 취소kafka 결과 
 
@@ -263,15 +263,15 @@ order 취소kafka 결과
 (orderCancelled -> PaymentCanceled -> DeliveryCancelled)
 ```
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\3.cancel_order_kafka.JPG)
+![](images\3.cancel_order_kafka.JPG)
 
 ## 4.
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\4.order3_outofstock.JPG)
+![](images\4.order3_outofstock.JPG)
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\4.order3_outofstock_500error.JPG)
+![](images\4.order3_outofstock_500error.JPG)
 
-![](D:\Cloud%20Native%20Architecture\capstone\team4-2\images\4.delivery_get_address.JPG)
+![](images\4.delivery_get_address.JPG)
 
 
 
