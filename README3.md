@@ -253,7 +253,8 @@ order 최종 취소된  결과(DeliveryCanceled)의 이벤트를 Order 내 Mview
 
 
 
-## 3.
+## 3. Compensation / Correlation
+
 
 ![](images/3.cancel_order.JPG)
 
@@ -267,7 +268,7 @@ order 취소kafka 결과
 
 
 
-## 4.
+## 4. Request / Response
 
 out of stock
 
@@ -277,7 +278,7 @@ out of stock 500 error
 
 ![](images/4.order3_outofstock_500error.JPG)
 
-FeignClient를 활용한 REST get (Delivery에 필요한 주소 정보를 다른 Order 마이크로 서비스로 부터 받음)
+FeignClient를 활용한 REST get (Delivery에 필요한 address 정보를 다른 Order 마이크로 서비스로 부터 받음)
 
 
 ```
