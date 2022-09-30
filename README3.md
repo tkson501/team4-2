@@ -255,7 +255,7 @@ order 최종 취소된  결과(DeliveryCanceled)의 이벤트를 Order 내 Mview
 
 ## 3.
 
-![](images\3.cancel_order.JPG)
+![](images/3.cancel_order.JPG)
 
 order 취소kafka 결과 
 
