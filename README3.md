@@ -265,11 +265,28 @@ order 취소kafka 결과
 
 ![](images/3.cancel_order_kafka.JPG)
 
+
+
 ## 4.
+
+out of stock
 
 ![](images/4.order3_outofstock.JPG)
 
+out of stock 500 error
+
 ![](images/4.order3_outofstock_500error.JPG)
+
+FeignClient를 활용한 REST get (Delivery에 필요한 주소 정보를 다른 Order 마이크로 서비스로 부터 받음)
+
+
+```
+@FeignClient(name = "order", url = "${api.url.order}")
+public interface OrderService {
+    @RequestMapping(method= RequestMethod.GET, path="/orders/{id}")
+    public Order getOrder(@PathVariable("id") Long id);
+}
+```
 
 ![](images/4.delivery_get_address.JPG)
 
