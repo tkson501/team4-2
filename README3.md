@@ -292,8 +292,23 @@ public interface OrderService {
 ![](images/4.delivery_get_address.JPG)
 
 
+## 5. Circuit Breaker
 
 
+Order 서비스의 application.yaml 파일 내 hystix를 이용한 circuit breaker 설정
+
+```
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 500
+spring:
+  application:
+    name: order
+```
 
 
 
