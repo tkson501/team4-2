@@ -231,9 +231,9 @@ mvn spring-boot:run
 
 
 
-2. 현장 수령 (isoffline=true)
+2) 현장 수령 (isoffline=true)
 
-![](images\1.order2-offline.JPG)
+![](images/1.order2-offline.JPG)
 
 ##### kafka event 확인
 
@@ -241,13 +241,13 @@ mvn spring-boot:run
 (orderPlaced -> PaymentCompleted -> FlowerSold)
 ```
 
-![](images\1.order2-offline_kafka.JPG)
+![](images/1.order2-offline_kafka.JPG)
 
 
 
 ### 2. CQRS
 
-![](images\2.cqrs.JPG)
+![](images/2.cqrs.JPG)
 
 order 최종 취소된  결과(DeliveryCanceled)의 이벤트를 Order 내 Mview에 저장
 
@@ -263,15 +263,15 @@ order 취소kafka 결과
 (orderCancelled -> PaymentCanceled -> DeliveryCancelled)
 ```
 
-![](images\3.cancel_order_kafka.JPG)
+![](images/3.cancel_order_kafka.JPG)
 
 ## 4.
 
-![](images\4.order3_outofstock.JPG)
+![](images/4.order3_outofstock.JPG)
 
-![](images\4.order3_outofstock_500error.JPG)
+![](images/4.order3_outofstock_500error.JPG)
 
-![](images\4.delivery_get_address.JPG)
+![](images/4.delivery_get_address.JPG)
 
 
 
