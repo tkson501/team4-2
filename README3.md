@@ -215,6 +215,13 @@ mvn spring-boot:run
 
 
 
+
+
+
+
+
+
+
 ### 1. Saga Pattern (Pub/Sub)
 
 1) Online 배송 요청 (isoffline=false)
@@ -309,6 +316,15 @@ spring:
   application:
     name: order
 ```
+
+
+
+
+
+
+
+
+
 
 
 
