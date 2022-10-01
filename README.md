@@ -149,9 +149,9 @@ sudo ./install
 ####  configure AWS Client 
 ```bash
 aws configure
-AWS Access Key ID [None]: AKIA5T5A3YE2OAGFX65X
-AWS Secret Access Key [None]: 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
-Default region name [None]: ap-northeast-3
+AWS Access Key ID [None]: 
+AWS Secret Access Key [None]: 
+Default region name [None]: 
 Default output format [None]: json
 
 ```
@@ -159,13 +159,14 @@ Default output format [None]: json
 ### .bashrc
 
 ```bash
-## K8s Settings
-KUBECTL=/workspace/team/kubectl
-export PATH=$KUBECTL:$PATH
 
+cat << EOF | tee -a ~/.bashrc
+
+## K8s Settings
 source <(kubectl completion bash)
 alias k=kubectl
 complete -o default -F __start_kubectl k
+EOF
 ```
 
 
@@ -180,6 +181,8 @@ eksctl create cluster --name ${myclusterUserid} --version 1.21 --spot --managed 
 
 #### config EKS Client
 ```bash
+
+export myclusterUserid=team4
 aws eks update-kubeconfig --name ${myclusterUserid}
 
  kubectl get nodes
@@ -471,3 +474,28 @@ kubectl exec -it siege bin/bash
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml
 kubectl get deployment metrics-server -n kube-system
 ```
+
+
+##### install Istio
+```bash
+curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.11.3 TARGET_ARCH=x86_64 sh -
+cd istio-1.11.3
+export PATH=$PWD/bin:$PATH
+
+
+istioctl install --set profile=demo --set hub=gcr.io/istio-release
+```
+
+- install Isto samples/addons
+```bash
+kubectl apply -f samples/addons
+```
+
+- enable istio-system
+```
+kubectl apply -f <(istioctl kube-inject -f Deployment.yml) -n istio-test-ns
+kubectl label namespace default istio-injection=enabled
+```
+
+---
+

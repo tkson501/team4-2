@@ -19,6 +19,20 @@ spec:
           image: ulysysdev/payment:v1
           ports:
             - containerPort: 8080
+          # env:
+          #   - name: superuser.userId
+          #     value: some_value					
+          #   - name: _DATASOURCE_ADDRESS
+          #     value: mysql
+          #   - name: _DATASOURCE_TABLESPACE
+          #     value: orderdb
+          #   - name: _DATASOURCE_USERNAME
+          #     value: root
+          #   - name: _DATASOURCE_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-pass
+          #         key: password
           readinessProbe:
             httpGet:
               path: '/actuator/health'
