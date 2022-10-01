@@ -119,7 +119,8 @@
 
 ![](images/0.es-3.jpg)
 
-    Dashboard 기능은 Core Service인 Order에서 READ moderl을 두기로 MVIEW
+Dashboard 기능은 Core Service인 Order에서 Read model을 통해서 
+하기로 하여 Dashboard bounded context는 삭제
 
 ### 진행중 이슈를 통해 추가 요구사항 공유하면서 속성 값도 정리
 
